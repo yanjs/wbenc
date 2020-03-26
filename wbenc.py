@@ -112,9 +112,9 @@ def main():
             raw = f.read()
 
         def sqeeze(a, x):
-            if not a:
-                return [x]
             w = encoding_dict[x]
+            if not a:
+                return [w]
             if w[0].isalnum() and a[-1].isalpha() and len(a[-1]) < 4:
                 a[-1] += ' '
             a.append(w)
@@ -143,8 +143,11 @@ def main():
                     out.append(decoding_dict[word])
                     word = ch
             elif ch == ' ':
-                out.append(decoding_dict[word])
-                word = ''
+                if word == '':
+                    out.append(' ')
+                else:
+                    out.append(decoding_dict[word])
+                    word = ''
             elif ch in DELIMITERS:
                 word += ch
                 out.append(decoding_dict[word])
