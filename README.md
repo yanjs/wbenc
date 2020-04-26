@@ -6,12 +6,12 @@ This is a Python3 wubi encoder and decoder. The given dict.pkl file is for wubi8
 
 In any terminal:
 ```bash
-$ python wbenc.py -i input.txt -o output.txt -d dict.pkl
+$ python wbenc.py -i input.txt -o output.txt -d dict.pkl -E
 ```
 
 For more usage:
 ```bash
-$ python wbenc.py
+$ python wbenc.py -h
 ```
 
 ## Example
